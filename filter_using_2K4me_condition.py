@@ -3,7 +3,7 @@
 '''
 Python script to examine 1-factorizations of K_{12} that pass the C_4 test.
 This script applies the two K_4-e test.
-The script reads in the output of read_1factorizations.py.
+The script reads in the output of filter_using_C4_condition.py.
 Written by Philip DeOrsey, Stephen Hartke, and Jason Williford, 2021.
 '''
 
@@ -21,7 +21,7 @@ class K4meViolation(Exception):
 if __name__=="__main__":
     
     if len(sys.argv)<3:
-        print("USAGE: examine_C4_1factorizations.py output.txt final.txt")
+        print("USAGE: python filter_using_2K4me_condition.py input.txt output.txt")
         exit(99)
     
     file_input =sys.argv[1]
@@ -98,8 +98,8 @@ if __name__=="__main__":
                         for i in range(n):
                             for j in range(i+1,n):
                                 if adjacency_matrix[i,j]==f:
-                                    s+=f"({i},{j})"
-                                    s+=(',' if j<n-1 else '')
+                                    s+=f"({i},{j}),"
+                        s=s[:-1]  # remove last comma
                         s+=']'
                         file_out.write(s+"\n")
                     file_out.write("\n")

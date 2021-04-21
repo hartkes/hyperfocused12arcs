@@ -12,8 +12,10 @@ Petteri Kaski and Patric R. J. Östergård. There are 1,132,835,421,602,062,347 
 From a `bash` shell, the following commands will run the scripts:
 
 ```
-    bzcat k12-1f.bz2 | ./read_1factorizations.py - output.txt
-    ./examine_C4_1factorizations.py output.txt final.txt
+    bzcat k12-1f.bz2 | python filter_using_C4_condition.py - filtered_with_C4.txt
+    python filter_using_2K4me_condition.py filtered_with_C4.txt filtered_with_C4_and_2K4me.txt
 ```
 
-The `read_1factorizations.py` script takes about 38 hours to run.  The `examine_C4_1factorizations.py` script takes less than a minute.
+The `filter_using_C4_condition.py` script takes about 40 hours to run.
+It took 39.6 hours on an Intel Xeon E5-2695 v4 2.10GHz processor running Ubuntu 18.04.5 LTS.
+The `filter_using_2K4me_condition.py` script takes less than 30 seconds.

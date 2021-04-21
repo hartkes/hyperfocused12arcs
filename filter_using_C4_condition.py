@@ -47,7 +47,7 @@ class EndOfFile(Exception):
 if __name__=="__main__":
     
     if len(sys.argv)<3:
-        print("USAGE: read_1factorizations.py data_file.txt output.txt; use - for stdin for input")
+        print("USAGE: python filter_using_C4_condition.py data_file.txt output.txt; use - for input from stdin")
         exit(99)
     
     file_input =sys.argv[1]
