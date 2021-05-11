@@ -18,6 +18,7 @@ From a `bash` shell, the following commands will run the scripts:
     python filter_using_2K4me_condition.py filtered_with_C4.txt filtered_with_C4_and_2K4me.txt
 ```
 
+The scripts were run with Python 3.6.9 to generate the output files included in the repository.
 The `filter_using_C4_condition.py` script takes about 40 hours to run.
 It took 39.6 hours on an Intel Xeon E5-2695 v4 2.10GHz processor running Ubuntu 18.04.5 LTS.
 The `filter_using_2K4me_condition.py` script takes less than 30 seconds.
